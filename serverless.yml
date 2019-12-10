@@ -24,10 +24,10 @@ frameworkVersion: '>=1.28.0 <2.0.0'
 provider:
   name: aws
   runtime: go1.x
+  region: us-west-1
 
 # you can overwrite defaults here
 #  stage: dev
-#  region: us-east-1
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -61,12 +61,6 @@ functions:
     events:
       - http:
           path: hello
-          method: get
-  world:
-    handler: bin/world
-    events:
-      - http:
-          path: world
           method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
