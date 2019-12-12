@@ -20,11 +20,13 @@ func Handler(ctx context.Context) (Response, error) {
 	var buf bytes.Buffer
 
 	body, err := json.Marshal(map[string]interface{}{
-		"message": "Amy I love you",
+		"message": "Amy I love you.",
 	})
+
 	if err != nil {
 		return Response{StatusCode: 404}, err
 	}
+
 	json.HTMLEscape(&buf, body)
 
 	resp := Response{
