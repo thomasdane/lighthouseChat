@@ -1,11 +1,16 @@
 version: 0.1
+env:
+  variables:
+      PACKAGE: "github.com/thomasdane/lighthouseChat" 
 phases:
   install:
     commands:
+      - mkdir -p ${GOPATH}/src/${PACKAGE}
+      - cp -a ${CODEBUILD_SRC_DIR}/.  ${GOPATH}/src/${PACKAGE}
       - npm install -g serverless
   build:
     commands:
-      - make
+      - cd ${GOPATH}/src/${PACKAGE} && make
   post_build:
     commands:
-      - serverless deploy
+      - cd hello && go test
