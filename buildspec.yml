@@ -10,7 +10,7 @@ phases:
       - npm install -g serverless
   build:
     commands:
-      - cd ${GOPATH}/src/${PACKAGE} && make
+      - cd ${GOPATH}/src/${PACKAGE}/hello && make
   post_build:
     commands:
       - cd hello && go test
