@@ -2,8 +2,7 @@ version: 0.1
 phases:
   install:
     commands:
-      - npm install
-      - serverless info
+      - npm install --global
       - pwd
       - mkdir -p ../github.com/thomasdane/lighthouseChat
       - mv * ../github.com/thomasdane/lighthouseChat
