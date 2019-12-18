@@ -1,0 +1,24 @@
+{
+  "name": "lighthousechat",
+  "version": "1.0.0",
+  "description": "Run lighthouse in your chat app",
+  "main": "hello/main.go",
+  "dependencies": {
+    "serverless": "latest",
+    "serverless-plugin-canary-deployments": "latest"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "go test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasdane/lighthouseChat.git"
+  },
+  "author": "Tom Dane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomasdane/lighthouseChat/issues"
+  },
+  "homepage": "https://github.com/thomasdane/lighthouseChat#readme"
+}
