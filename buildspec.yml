@@ -5,12 +5,18 @@ env:
 phases:
   install:
     commands:
-      - mkdir -p ${GOPATH}/src/${PACKAGE}
-      - cp -a ${CODEBUILD_SRC_DIR}/.  ${GOPATH}/src/${PACKAGE}
       - npm install -g serverless
+      - pwd
+      # AWS Codebuild Go images use /go for the $GOPATH so let's copy our
+      # application source code into that directory structure.
+      - mkdir -p "/go/src/$(dirname ${PACKAGE})"
+      - ln -s "${CODEBUILD_SRC_DIR}" "/go/src/${PACKAGE}"
+      - # Make sure we're in the package directort within our GOPATH
+      - cd "/go/src/${PACKAGE}"
+      - ls
   build:
     commands:
-      - cd ${GOPATH}/src/${PACKAGE}/hello && make
+      - make
   post_build:
     commands:
-      - cd hello && go test
+      - go test
