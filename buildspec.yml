@@ -6,6 +6,13 @@ phases:
   install:
     commands:
       - npm install --global
+      - echo CODEBUILD_SRC_DIR - $CODEBUILD_SRC_DIR
+      - echo GOPATH - $GOPATH
+      - echo GOROOT - $GOROOT
+      - echo Copying Source to Go module dir
+      - ls -l $CODEBUILD_SRC_DIR
+      - mkdir -p /go/src/github.com/thomasdane/lighthouseChat
+      - cp -a $CODEBUILD_SRC_DIR/* /go/src/github.com/thomasdane/lighthouseChat
   build:
     commands:
       - env GOOS=linux go build -ldflags="-s -w" -o bin/hello hello/main.go
