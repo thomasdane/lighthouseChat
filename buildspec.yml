@@ -1,4 +1,4 @@
-version: 0.1
+version: 0.2
 variables: 
   GO111MODULE: "on"
   git-credential-helper: yes
