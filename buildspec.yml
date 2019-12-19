@@ -1,18 +1,13 @@
 version: 0.1
+variables: 
+  GO111MODULE: "on"
 phases:
   install:
     commands:
       - npm install --global
-      - pwd
-      - mkdir -p ../github.com/thomasdane/lighthouseChat
-      - mv * ../github.com/thomasdane/lighthouseChat
-      - mv ../github.com .
-      - cd github.com/thomasdane/lighthouseChat
-      - pwd
-      - ls
   build:
     commands:
-      - make
+      - env GOOS=linux go build -ldflags="-s -w" -o bin/hello hello/main.go
   post_build:
     commands:
       - go test
