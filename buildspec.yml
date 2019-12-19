@@ -2,10 +2,10 @@ version: 0.1
 variables: 
   GO111MODULE: "on"
   git-credential-helper: yes
-runtime-versions:
-  golang: 1.13
 phases:
   install:
+    runtime-versions:
+      golang: 1.13
     commands:
       - npm install --global
       - echo CODEBUILD_SRC_DIR - $CODEBUILD_SRC_DIR
