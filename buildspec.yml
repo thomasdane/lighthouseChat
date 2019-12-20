@@ -18,6 +18,4 @@ phases:
   post_build:
     commands:
       - cd hello
-      - go test -v
-artifacts:
-    files: LighthouseChat/BuildArtif/7ixqO3b     
+      - go test -v 
