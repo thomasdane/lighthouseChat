@@ -23,7 +23,6 @@ phases:
       - cd ..
       - ls
 artifacts:
+  type: file
   files:
-    - appspec.yml
-    - '**/*'      
-         
+    - appspec.yml         
