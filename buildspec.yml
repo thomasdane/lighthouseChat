@@ -23,8 +23,6 @@ phases:
       - cd ..
       - ls
 artifacts:
-  type: zip
-  discard-paths: yes      
   files:
     - appspec.yml
     - '**/*'      
