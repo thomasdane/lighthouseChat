@@ -19,7 +19,10 @@ phases:
     commands:
       - cd hello
       - go test -v
+      - ls
+      - cd ..
 artifacts:
+    type: zip
     files:
-        - BuildArtif/*
+        - bin/hello/*
     discard-paths: yes       
