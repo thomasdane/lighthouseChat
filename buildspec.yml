@@ -18,4 +18,8 @@ phases:
   post_build:
     commands:
       - cd hello
-      - go test -v 
+      - go test -v
+artifacts:
+    files:
+        - BuildArtif/*
+    discard-paths: yes       
