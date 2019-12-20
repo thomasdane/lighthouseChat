@@ -22,7 +22,8 @@ phases:
       - ls
       - cd ..
 artifacts:
-    type: zip
-    files:
-        - bin/hello/*
-    discard-paths: yes       
+  type: zip
+  discard-paths: yes      
+  files:
+    - '**/*'      
+         
