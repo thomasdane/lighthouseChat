@@ -1,9 +1,9 @@
 version: 0.0
 Resources:
-  - hello:
+  - lighthousechat-dev-hello:
       Type: "AWS::Lambda::Function"
       Properties:
-        Name: "YourFunctionName"
-        Alias: "YourFunctionNameAlias"
-        CurrentVersion: "CurrentAliasVersionGoesHere"
-        TargetVersion: "NewlyPublishedVersionGoesHere"
+        Name: "lighthousechat-dev-hello"
+        Alias: "LATEST"
+        CurrentVersion: "LATEST"
+        TargetVersion: "LATEST"
